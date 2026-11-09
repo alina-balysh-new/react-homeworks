@@ -1,19 +1,43 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const Header = () => {
+  return <header>Учебный проект на React</header>
+}
 
+const MainContent = () => {
   return (
     <main>
-      <h1>Новый заголовок стартовой страницы</h1>
-      <p>Это приложение -- учебный проект на React.</p>
-      <p>Проект запущен через Vite.</p>
+      <h1>Основная часть страницы</h1>
+      <div>Бла бла бла бла:</div>
+      <Section></Section>
     </main>
   )
+}
+
+const Section = () => {
+  return (
+    <section>
+      <h2>Это очень важная секция</h2>
+      <p>Потому что здесь сверстали аж 2 абзаца статического текста</p>
+      <p>Такие дела!</p>
+    </section>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      <Header></Header>
+      <MainContent>
+        <Section></Section>
+      </MainContent>
+      <Footer></Footer>
+    </div>
+  )
+}
+
+const Footer = () => {
+  return <footer>2026</footer>
 }
 
 export default App
