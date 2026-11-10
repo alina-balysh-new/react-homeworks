@@ -1,15 +1,31 @@
 import './App.css'
-import Header from './components/Header'
-import { MainContent } from './components/Content'
-import Footer from './components/Footer'
+import UserCard from './components/UserCard'
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-      <MainContent></MainContent>
-      <Footer></Footer>
-    </div>
+    <>
+      <UserCard
+        name="Павел"
+        role="Frontend-разработчик"
+        experience={3}
+        location={{ city: 'Минск', country: 'Беларусь' }}
+        isAvailable={true}
+      />
+      <UserCard
+        name="Алина"
+        role="Frontend-разработчик"
+        experience={5}
+        location={{ city: 'Минск', country: 'Беларусь' }}
+        isAvailable={true}
+      />
+      <UserCard
+        name="Тиктокер"
+        role="Devops"
+        experience={1}
+        location={{ city: 'Минск', country: 'Беларусь' }}
+        isAvailable={false}
+      />
+    </>
   )
 }
 
