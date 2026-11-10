@@ -214,7 +214,17 @@
   background-color: #0B63F6;
 }
 
+.green {
+  background-color: #0fb55a;
+}
+
 .header {
   padding: 5px;
   color: white;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
