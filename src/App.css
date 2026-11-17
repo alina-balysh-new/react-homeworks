@@ -228,3 +228,44 @@
   flex-direction: column;
   align-items: center;
 }
+
+.block {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: max-content;
+  padding: 10px 15px;
+  margin: 10px;
+  align-items: flex-start;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  width: 300px;
+  margin-top: 20px;
+}
+
+.button-transparent {
+  background: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px 7px;
+  margin: 0px 5px;
+}
+
+.button-transparent:hover {
+  cursor: pointer;
+  background-color: rgba(172, 255, 47, 0.236);
+}
+
+.product {
+  display: flex;
+  justify-content: space-between
+}
+
+.product-btns-wrapper {
+
+}
