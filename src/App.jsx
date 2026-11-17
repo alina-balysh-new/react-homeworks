@@ -1,10 +1,16 @@
 import './App.css'
-import ParentComponent from './components/ParentComponent'
+import Profile from './components/Profile'
+import TasksList from './components/TasksList'
+import Cart from './components/Cart'
 
 function App() {
   return (
     <>
-      <ParentComponent />
+      <div className="flex-column">
+        <Profile />
+        <TasksList />
+        <Cart />
+      </div>
     </>
   )
 }
