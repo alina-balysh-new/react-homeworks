@@ -13,7 +13,7 @@ function Profile() {
         <h2>Профиль пользователя</h2>
         <div>Имя: {user.name}</div>
         <div>Возраст: {user.age}</div>
-        <div>Активен: {user.isActive === true ? 'да' : 'нет'}</div>
+        <div>Активен: {user.isActive ? 'да' : 'нет'}</div>
         <div className="buttons-wrapper">
           <button
             className="button-transparent"
