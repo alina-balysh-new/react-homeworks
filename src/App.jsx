@@ -1,21 +1,44 @@
 import './App.css'
-import ClickPractice from './components/ClickPractice'
-import InputPractice from './components/InputPractice'
-import FormPractice from './components/FormPractice'
-import ActionButton from './components/ActionButton'
+import { useState, useRef } from 'react'
+import List from './components/List'
 
 function App() {
+  const [data, setData] = useState([
+    { id: 1, name: 'Alina' },
+    { id: 2, name: 'Buba' },
+    { id: 3, name: 'Silviya' },
+  ])
+
+  const idCounter = useRef(4)
+  const inputRef = useRef(null)
+
   return (
     <>
       <div className="flex-column">
-        <ClickPractice />
-        <InputPractice />
-        <FormPractice />
-        <ActionButton
-          text="Сохранить"
-          eHandler={() => console.log('Сохранено')}
+        <input
+          type="text"
+          ref={inputRef}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              const newItem = {
+                id: idCounter.current,
+                name: inputRef.current.value.trim(),
+              }
+              idCounter.current++
+
+              setData((prevData) => [...prevData, newItem])
+
+              inputRef.current.value = ''
+            }
+          }}
         />
-        <ActionButton text="Удалить" eHandler={() => console.log('Удалено')} />
+        <button
+          onClick={() => {
+            inputRef.current.focus()
+          }}>
+          Фокус
+        </button>
+        <List data={data} setData={setData} />
       </div>
     </>
   )
